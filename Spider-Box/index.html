@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="test.js"></script>
+  </head>
+  <body>
+    <div class="row row-narrow justify-content-between search-area">
+      <div class="dropdown col-md-3">
+        <select id="venue-choice" class="form-control form-select">
+          <option selected>Manchester</option>
+        </select>
+      </div>
+
+      <div class="col-md-3">
+        <div class="flex-grow-1 position-relative">
+          <!--<label for="inputDate" class="visually-hidden">Choose a date</label>-->
+          <input
+            type="date"
+            class="form-control date pe-5 booking-date flatpickr flatpickr-input"
+            id="inputDate"
+            placeholder="Choose a date"
+          />
+          <img
+            src="https://bookedit.online/wp-content/uploads/2024/05/calendar_light.svg"
+            class="icon-form-calendar position-absolute"
+            alt="Calendar"
+          />
+        </div>
+      </div>
+
+      <div class="dropdown dropdown-pp col-md-3">
+        <div class="people-dropdown">
+          <select id="no_people" class="no_people form-control">
+            <option value="0">Select Guests</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19 or More</option>
+          </select>
+        </div>
+      </div>
+      <!--// col-md-3 -->
+
+      <div class="col-md-3 position-relative">
+        <select
+          id="item-times"
+          class="item-times form-control selected-time"
+          fdprocessedid="9y9kle"
+        >
+          <option>Select Time</option>
+          <option class="item-time" value="1000">10:00</option>
+          <option class="item-time" value="1030">10:30</option>
+          <option class="item-time" value="1100">11:00</option>
+          <option class="item-time" value="1130">11:30</option>
+          <option class="item-time" value="1200">12:00</option>
+          <option class="item-time" value="1230">12:30</option>
+          <option class="item-time" value="1300">13:00</option>
+          <option class="item-time" value="1330">13:30</option>
+          <option class="item-time" value="1400">14:00</option>
+          <option class="item-time" value="1430">14:30</option>
+          <option class="item-time" value="1500">15:00</option>
+          <option class="item-time" value="1530">15:30</option>
+          <option class="item-time" value="1600">16:00</option>
+          <option class="item-time" value="1630">16:30</option>
+          <option class="item-time" value="1700">17:00</option>
+          <option class="item-time" value="1730">17:30</option>
+          <option class="item-time" value="1800">18:00</option>
+          <option class="item-time" value="1830">18:30</option>
+          <option class="item-time" value="1900">19:00</option>
+          <option class="item-time" value="1930">19:30</option>
+          <option class="item-time" value="2000">20:00</option>
+          <option class="item-time" value="2030">20:30</option>
+          <option class="item-time" value="2100">21:00</option>
+          <option class="item-time" value="2130">21:30</option>
+          <option class="item-time" value="2200">22:00</option>
+          <option class="item-time" value="2230">22:30</option>
+          <option class="item-time" value="2300">23:00</option>
+        </select>
+      </div>
+      <!--// col-md-3 -->
+    </div>
+    <div
+      class="alert search-alert alert-danger text-center"
+      style="display: none"
+    >
+      Please enter all details.
+    </div>
+  </body>
+</html>
