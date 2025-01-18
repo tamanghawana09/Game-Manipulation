@@ -1,0 +1,316 @@
+[hidden date default:get]
+[hidden textarea dietary x3 placeholder "Please state below any dietary requirements your guests may have."]
+<div class="menu">
+  <div class="row mb-2 border-bottom">
+    <div class="col-md-14"><h4 class="heading">Book Restaurant</h4></div>
+</div>
+  <div class="row dnt mt-2 mb-2 border-bottom">
+    <div class="col-md-4"><strong>Name*</strong></div>
+    <div class="col-md-7">[text* contactName class:form-control placeholder "Name*"]</div>
+  </div>
+  <div class="row dnt mb-2 border-bottom">
+    <div class="col-md-4"><strong>Email*</strong></div>
+    <div class="col-md-7">[email* email class:form-control placeholder "Email*"]</div>
+  </div>
+  <div class="row dnt mb-2 border-bottom" style="display: none">
+    <div class="col-md-4"><strong>Booking Number*</strong></div>
+    <div class="col-md-7">[text bookingno class:form-control placeholder "Booking Number"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-4"><strong>Restaurant</strong></div>
+      <div class="col-md-7">[select restaurant class:form-control "Jubilee Restaurant" "Plymouth Restaurant" "Marquee Restaurant"]</div>
+  </div>
+
+[group january-16 clear_on_hide]
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-14"><h4>Jubilee Restaurant Menu 16th January 2025</h4></div>
+      <div class="col-md-14"><h5>Starter</h5></div>
+      <div class="col-md-10">[checkbox jan16-1 use_label_element "Homemade Winter Vegetable Soup"]</div>
+      <div class="col-md-2 col-7">[number jan16qty-1 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number jan16gst-1 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox jan16-2 use_label_element "Duo of Smoked Fish; Smoked Mackerel & Trout with Horseradish & Chive Potato Salad"]</div>
+      <div class="col-md-2 col-7">[number jan16qty-2 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number jan16gst-2 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox jan16-3 use_label_element "Baked Mushroom filled with Spinach & Stilton, topped with a Panko Crust &Tomato & Basil Sauce"]</div>
+      <div class="col-md-2 col-7">[number jan16qty-3 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number jan16gst-3 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="col-md-14 mb-2"><strong>With Assorted Rolls and butter</strong></div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-14"><h5>Main Course</h5></div>
+      <div class="col-md-10">[checkbox jan16-5 use_label_element "Mature English Beef Sirloin with Glazed Shallots & Malbec Jus"]</div>
+      <div class="col-md-2 col-7">[number jan16qty-5 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number jan16gst-5 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox jan16-6 use_label_element "Honey & Thyme Glazed Gressingham Duck with Sherry & Thyme Sauce"]</div>
+      <div class="col-md-2 col-7">[number jan16qty-6 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number jan16gst-6 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox jan16-7 use_label_element "Baked Cod Loin with Roasted Vegetables & Red Pepper infused Cream & Chive Sauce"]</div>
+      <div class="col-md-2 col-7">[number jan16qty-7 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number jan16gst-7 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox jan16-8 use_label_element "Squash & Red Onion Risotto with Garlic & Thyme (v)"]</div>
+      <div class="col-md-2 col-7">[number jan16qty-8 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number jan16gst-8 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="col-md-14 mb-2"><strong>All Dishes Served with Potatoes and Seasonal Vegetables</strong></div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-14"><h5>Dessert</h5></div>
+      <div class="col-md-10">[checkbox jan16-9 use_label_element "Homemade Bread & Butter Pudding served with Custard"]</div>
+      <div class="col-md-2 col-7">[number jan16qty-9 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number jan16gst-9 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox jan16-10 use_label_element "Crème Brulée with Shortbread & Red Berry Coulis"]</div>
+      <div class="col-md-2 col-7">[number jan16qty-10 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number jan16gst-10 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox jan16-11 use_label_element "Cranachan layers of fresh Raspberries, Whipped Cream, Whisky & Honey with Toasted Oatmeal"]</div>
+      <div class="col-md-2 col-7">[number jan16qty-11 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number jan16gst-11 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+    <div class="col-md-10">[checkbox jan16-12 use_label_element "English Cheeses with Grapes, Celery and Savoury Biscuits"]</div>
+    <div class="col-md-2 col-7">[number jan16qty-12 class:form-control min:0 placeholder "Quantity"]</div>
+    <div class="col-md-2 col-7">[number jan16gst-12 class:form-control placeholder "Guest(s)"]</div>
+</div>
+  <div class="row mb-3">
+      <div class="col-md-14"><strong>English Cheeses with Grapes, Celery and Savoury Biscuits as a supplement £8.50 / Coffee and Mints</strong></div>
+  </div>
+[/group]
+
+[group february-5 clear_on_hide]
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-14"><h4>Jubilee Restaurant Menu 5th February 2025</h4></div>
+      <div class="col-md-14"><h5>Starter</h5></div>
+      <div class="col-md-10">[checkbox feb5-1 use_label_element "Homemade Cream of Wild Mushroom Soup"]</div>
+      <div class="col-md-2 col-7">[number feb5qty-1 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb5gst-1 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb5-2 use_label_element "Honey Glazed Gressingham Duck & Orange Salad with Sweet Chilli Jam"]</div>
+      <div class="col-md-2 col-7">[number feb5qty-2 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb5gst-2 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb5-3 use_label_element "Severn & Wye Smoked Salmon with Mixed Leaves & Salsa"]</div>
+      <div class="col-md-2 col-7">[number feb5qty-3 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb5gst-3 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="col-md-14 mb-2"><strong>With Assorted Rolls and butter</strong></div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-14"><h5>Main Course</h5></div>
+      <div class="col-md-10">[checkbox feb5-4 use_label_element "Roast Sirloin of English Beef with Yorkshire Pudding & Pan Gravy"]</div>
+      <div class="col-md-2 col-7">[number feb5qty-4 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb5gst-4 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+    <div class="col-md-10">[checkbox feb5-5 use_label_element "Free Range Braised Belly Pork with Crackling, Aspell Cider Sauce & Wholegrain Mustard Sauce"]</div>
+    <div class="col-md-2 col-7">[number feb5qty-5 class:form-control min:0 placeholder "Quantity"]</div>
+    <div class="col-md-2 col-7">[number feb5gst-5 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb5-6 use_label_element "Panko Crusted Hake Fillet with a Tomato & Basil Cassoulet"]</div>
+      <div class="col-md-2 col-7">[number feb5qty-6 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb5gst-6 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb5-7 use_label_element "Tomato & Goats Cheese Tart (v)"]</div>
+      <div class="col-md-2 col-7">[number feb5qty-7 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb5gst-7 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="col-md-14 mb-2"><strong>All Dishes Served with Potatoes and Seasonal Vegetables</strong></div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-14"><h5>Dessert</h5></div>
+      <div class="col-md-10">[checkbox feb5-8 use_label_element "Sticky Toffee Pudding served with Clotted Cream Ice Cream"]</div>
+      <div class="col-md-2 col-7">[number feb5qty-8 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb5gst-8 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb5-9 use_label_element "Chocolate & Salted Caramel Torte"]</div>
+      <div class="col-md-2 col-7">[number feb5qty-9 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb5gst-9 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb5-10 use_label_element "English Cheeses with Grapes, Celery and Savoury Biscuits "]</div>
+      <div class="col-md-2 col-7">[number feb5qty-10 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb5gst-10 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-3">
+      <div class="col-md-14"><strong>English Cheeses with Grapes, Celery and Savoury Biscuits as a supplement £6.50</strong></div>
+  </div>
+[/group]
+
+[group february-19 clear_on_hide]
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-14"><h4>Jubilee Restaurant Menu 19th February 2025</h4></div>
+      <div class="col-md-14"><h5>Starter</h5></div>
+      <div class="col-md-10">[checkbox feb19-1 use_label_element "Homemade Spiced Butternut Squash Soup "]</div>
+      <div class="col-md-2 col-7">[number feb19qty-1 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb19gst-1 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb19-2 use_label_element "Goats Cheese Salad with Honey & Thyme & Sweet Chilli Jam"]</div>
+      <div class="col-md-2 col-7">[number feb19qty-2 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb19gst-2 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb19-3 use_label_element "Cold Fresh Poached Salmon with Prawns & Lemon Hollandaise & Micro Herb"]</div>
+      <div class="col-md-2 col-7">[number feb19qty-3 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb19gst-3 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="col-md-14 mb-2"><strong>With Assorted Rolls and butter</strong></div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-14"><h5>Main Course</h5></div>
+      <div class="col-md-10">[checkbox feb19-4 use_label_element "Slow Roasted leg of Lamb with Rosemary and Garlic and Pan Gravy"]</div>
+      <div class="col-md-2 col-7">[number feb19qty-4 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb19gst-4 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+    <div class="col-md-10">[checkbox feb19-5 use_label_element "Glazed Gressingham Duck with a Red Wine Jus & Dauphinoise Potatoes"]</div>
+    <div class="col-md-2 col-7">[number feb19qty-5 class:form-control min:0 placeholder "Quantity"]</div>
+    <div class="col-md-2 col-7">[number feb19gst-5 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb19-6 use_label_element "Herb Crusted Cod Loin with Cream and Chardonnay Sauce & Dauphinoise Potatoes"]</div>
+      <div class="col-md-2 col-7">[number feb19qty-6 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb19gst-6 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb19-7 use_label_element "Roasted Vegetable Wellington (v)"]</div>
+      <div class="col-md-2 col-7">[number feb19qty-7 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb19gst-7 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="col-md-14 mb-2"><strong>All Dishes Served with Potatoes and Seasonal Vegetables</strong></div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-14"><h5>Dessert</h5></div>
+      <div class="col-md-12"><strong>Trio of Dessert</strong></div>
+      <div class="col-md-10">[checkbox feb19-8 use_label_element "Warm Pears poached in Red Wine and Spices with Clotted Cream Ice Cream"]</div>
+      <div class="col-md-2 col-7">[number feb19qty-8 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb19gst-8 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb19-9 use_label_element "Chocolate & Salted Caramel Tart"]</div>
+      <div class="col-md-2 col-7">[number feb19qty-9 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb19gst-9 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-3">
+      <div class="col-md-14"><strong>English Cheeses with Grapes, Celery and Savoury Biscuits as a supplement £6.50</strong></div>
+      <div class="col-md-14"><strong>Coffee and Mints </strong></div>
+  </div>
+[/group]
+
+
+[group february-27 clear_on_hide]
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-14"><h4>Jubilee Restaurant Menu 27th February 2025</h4></div>
+      <div class="col-md-14"><h5>Starter</h5></div>
+      <div class="col-md-10">[checkbox feb27-1 use_label_element "Homemade Leek and Potato Soup"]</div>
+      <div class="col-md-2 col-7">[number feb27qty-1 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb27gst-1 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb27-2 use_label_element "Tomato, Basil, Mozzarella and Parma Ham Salad with Red Pesto and Balsamic"]</div>
+      <div class="col-md-2 col-7">[number feb27qty-2 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb27gst-2 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb27-3 use_label_element "Home made Fish Cake with Lemon and Dill Butter"]</div>
+      <div class="col-md-2 col-7">[number feb27qty-3 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb27gst-3 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="col-md-14 mb-2"><strong>With Assorted Rolls and butter</strong></div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-14"><h5>Main Course</h5></div>
+      <div class="col-md-10">[checkbox feb27-4 use_label_element "Slow Braised British Beef with Red Wine and Mushrooms with Horseradish Mash"]</div>
+      <div class="col-md-2 col-7">[number feb27qty-4 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb27gst-4 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+    <div class="col-md-10">[checkbox feb27-5 use_label_element "Salmon Fillet wrapped in Filo Pastry with a Prosecco and Pink Peppercorn Sauce"]</div>
+    <div class="col-md-2 col-7">[number feb27qty-5 class:form-control min:0 placeholder "Quantity"]</div>
+    <div class="col-md-2 col-7">[number feb27gst-5 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb27-6 use_label_element "Saddle of Lamb stuffed with a Rosemary Farce Served with Red Wine Jus and Dauphinoise Potatoes"]</div>
+      <div class="col-md-2 col-7">[number feb27qty-6 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb27gst-6 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb27-7 use_label_element "Leek, Brie and Cranberry Wellington (v)"]</div>
+      <div class="col-md-2 col-7">[number feb27qty-7 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb27gst-7 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="col-md-14 mb-2"><strong>All Dishes Served with Potatoes and Seasonal Vegetables</strong></div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-14"><h5>Dessert</h5></div>
+      <div class="col-md-10">[checkbox feb27-8 use_label_element "Lemon and White Chocolate Parfait with Raspberry Sorbet"]</div>
+      <div class="col-md-2 col-7">[number feb27qty-8 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb27gst-8 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+      <div class="col-md-10">[checkbox feb27-9 use_label_element "Warm Chocolate Brownie with Clotted Cream Ice Cream and Chocolate Sauce"]</div>
+      <div class="col-md-2 col-7">[number feb27qty-9 class:form-control min:0 placeholder "Quantity"]</div>
+      <div class="col-md-2 col-7">[number feb27gst-9 class:form-control placeholder "Guest(s)"]</div>
+  </div>
+  <div class="row mb-2 border-bottom">
+    <div class="col-md-10">[checkbox feb27-10 use_label_element "Honeycomb Cheesecake with Salted Caramel Sauce"]</div>
+    <div class="col-md-2 col-7">[number feb27qty-10 class:form-control min:0 placeholder "Quantity"]</div>
+    <div class="col-md-2 col-7">[number feb27gst-10 class:form-control placeholder "Guest(s)"]</div>
+</div>
+  <div class="row mb-3">
+      <div class="col-md-14"><strong>English Cheeses with Grapes, Celery and Savoury Biscuits as a supplement £6.50</strong></div>
+      <div class="col-md-14"><strong>Coffee and Mints</strong></div>
+  </div>
+[/group]
+
+[group may-11 clear_on_hide]
+<div class="row mb-2 border-bottom">
+    <div class="col-md-14"><h4>Marquee Restaurant Menu 11th May 2025</h4></div>
+    <div class="col-md-14"><h5>Starter</h5></div>
+    <div class="col-md-10">[checkbox may11-1 use_label_element "Tomato, Mozzarella, Parma Ham and Basil Salad with Red Pesto, Balsamic and Olive Oil "]</div>
+    <div class="col-md-2 .col-7">[number may11qty-1 class:form-control min:0 placeholder "Quantity"]</div>
+    <div class="col-md-2 .col-7">[number may11gst-1 class:form-control placeholder "Guest(s)"]</div>
+</div>
+<div class="row mb-2 border-bottom">
+    <div class="col-md-14"><h5>Main Course</h5></div>
+    <div class="col-md-10">[checkbox may11-2 use_label_element "Chicken Chardonnay - Chicken Breast lined with Asparagus and Somerset Brie, Coated in Chardonnay & Tarragon Sauce"]</div>
+    <div class="col-md-2 col-7">[number may11qty-2 class:form-control min:0 placeholder "Quantity"]</div>
+    <div class="col-md-2 col-7">[number may11gst-2 class:form-control placeholder "Guest(s)"]</div>
+</div>
+<div class="row mb-2 border-bottom">
+    <div class="col-md-10">[checkbox may11-3 use_label_element "Vegetarian Option: Roasted Peppers filled with Vegetable Risotto"]</div>
+    <div class="col-md-2 col-7">[number may11qty-3 class:form-control min:0 placeholder "Quantity"]</div>
+    <div class="col-md-2 col-7">[number may11gst-3 class:form-control min:0 placeholder "Guest(s)"]</div>
+</div>
+<div class="col-md-14 mb-2"><strong>All Dishes Served with Fresh Market Vegetables and Potatoes</strong></div>
+<div class="row mb-2 border-bottom">
+    <div class="col-md-14"><h5>Dessert</h5></div>
+    <div class="col-md-10">[checkbox may11-4 use_label_element "Strawberry and prosecco Truffle"]</div>
+    <div class="col-md-2 col-7">[number may11qty-4 class:form-control min:0 placeholder "Quantity"]</div>
+    <div class="col-md-2 col-7">[number may11gst-4 class:form-control min:0 placeholder "Guest(s)"]</div>
+</div>
+<div class="row mb-2 border-bottom">
+    <div class="col-md-10">[checkbox may11-5 use_label_element "Tea/Coffee and Mints"]</div>
+    <div class="col-md-2 col-7">[number may11qty-5 class:form-control min:0 placeholder "Quantity"]</div>
+    <div class="col-md-2 col-7">[number may11gst-5 class:form-control min:0 placeholder "Guest(s)"]</div>
+</div>
+<div class="row mb-3">
+    <div class="col-md-14"><strong>€89.50pp</strong></div>
+</div>
+[/group]
+
+  <div class="elementor-row">
+      [submit class:btn class:btn-lg class:btn-lr-blue "Order Now"]
+  </div>
+</div>
+<style>.wpcf7-form h5{color: #ed7162;}.wpcf7-form .wpcf7-list-item {display: block;}.wpcf7-form span.wpcf7-form-control {padding: 0px;}.wpcf7-form .wpcf7-form-control.wpcf7-submit{font-size: 19px;}</style>

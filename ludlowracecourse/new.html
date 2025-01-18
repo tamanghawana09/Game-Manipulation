@@ -1,0 +1,27 @@
+<script>
+  (function($) {
+    $(document).ready(function() {
+      $('.booking-snippet .wpb-pcf-btn').on('click', function() {
+        const $snippet = $(this).closest('.booking-snippet');
+        const eventName = $snippet.find('.btn-enquiry').data('ev');
+        const date = $snippet.find('.btn-enquiry').data('dt');
+        console.log(eventName);
+        console.log(date);
+        // Create a MutationObserver to watch for dynamic elements
+        const observer = new MutationObserver(function(mutationsList, observer) {
+          const $fev = $('.fev');
+          const $fdate = $('.fdate');
+
+          if ($fev.length && $fdate.length) {
+            $fev.val(eventName);
+            $fdate.val(date);
+            observer.disconnect(); // Stop observing once elements are found and values are set
+          }
+        });
+
+        // Start observing the body or a specific parent element
+        observer.observe(document.body, { childList: true, subtree: true });
+      });
+    });
+  })(jQuery);
+</script>
