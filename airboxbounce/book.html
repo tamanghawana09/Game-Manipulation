@@ -1,0 +1,464 @@
+<link rel='stylesheet' id='bootstrap-css' href='//cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css' type='text/css' media='all' />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script type="text/javascript">
+var allDatesAvailable = [];
+var ss;
+allDatesAvailable.push({
+    Date: "2023-8-8",
+    Class: "aug08",
+    Price: "peak"
+});
+
+jQuery(document).on("elementor/popup/show", () => {
+    jQuery(".flatpickr-input").flatpickr({
+        altInput: true,
+        altFormat: "j F Y",
+        //defaultDate: default_date,
+        dateFormat: "Y-m-d",
+        inline: true,
+        position: "auto center",
+		disable: [
+            function(date) {
+                d = new Date(date).toLocaleDateString();
+                console.log(d);
+                // return true to disable
+                return (d == "12/25/2023" || d == "12/26/2023" || d == "1/1/2024" || d == "9/18/2024");
+            }
+        ],
+        locale: {
+            firstDayOfWeek: 1,
+            // start week on Monday
+        },
+        minDate: "today",
+        maxDate: "2024-12-31",
+        onChange: function (selectedDates, dateStr, instance) {
+            ss = selectedDates[0].getDay();
+			sd = selectedDates[0].getDate();
+			sm = selectedDates[0].getMonth();
+			//ss = ss + 1;
+			var dt = jQuery(".flatpickr-input").val();
+			dte = jQuery(".flatpickr-input").val();
+
+			console.log('selected day: '+ss);
+			
+			jQuery(".activities .col-md-6.halloween").hide();
+			jQuery(".activities .col-md-6.ssession31").hide();
+            jQuery(".activities .col-md-6.pyjama").hide();
+            jQuery(".activities .col-md-6.sen-christmas").hide();
+            jQuery(".activities .col-md-6.megab-christmas").hide();
+
+			var halloweeText = jQuery(".activities .col-md-6.mbounce h5").text();
+			jQuery(".activities .col-md-6.mbounce h5").text(halloweeText.replace("Halloween", ""));
+
+			if( ss==6 || ss==3){ //Wed/Sat
+				jQuery(".activities .col-md-6.jfjump").show();
+			} else if(ss==5)  { //Fri
+				jQuery(".activities .col-md-6.mbounce").show();
+				jQuery(".activities .col-md-6.jfjump").show();
+			} else if(sm===10 && sd===29) { //Fri
+				jQuery(".activities .col-md-6.mbounce").show();
+				jQuery(".activities .col-md-6.ssession").show();
+			} else if(ss==1){ //Mon
+				jQuery(".activities .col-md-6.calmer").hide();
+				jQuery(".activities .col-md-6.jfjump").show();
+			} else if(ss==0 || ss==2){ //Sun/Tue
+				jQuery(".activities .col-md-6.ssession").show();
+				jQuery(".activities .col-md-6.ssession31").hide();
+				jQuery(".activities .col-md-6.jfjump").show();
+            } else { //Thu
+				jQuery(".activities .col-md-6").show();
+				jQuery(".activities .col-md-6.jfjump").show();
+				jQuery(".activities .col-md-6.mbounce").hide();
+				jQuery(".activities .col-md-6.calmer").hide();
+				jQuery(".activities .col-md-6.ssession").hide();
+                jQuery(".activities .col-md-6.pyjama").hide();
+                jQuery(".activities .col-md-6.megab-christmas").hide();
+                jQuery(".activities .col-md-6.sen-christmas").hide();
+				//Remove after 31Oct
+				jQuery(".activities .col-md-6.ssession31").hide();
+				jQuery(".activities .col-md-6.halloween").hide();
+
+			}
+			
+            jQuery(".activities").show();
+            jQuery(".slots").hide();
+            //jQuery('.day'+ss).show();
+
+            jQuery("#cal-element").hide();
+            //jQuery('.slot-date').show();
+            
+			jQuery(".choose_times").attr("data-date", dte).data("date", dte);
+			//jQuery('.choose_times').zoneAvailability();
+			jQuery('.choose_times').availability();
+        },
+        onDayCreate: function (selectedDates, dateStr, instance, dayElem) {
+			var date = dayElem.dateObj;
+            var dateCreated = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+            
+            dayElem.className += '';
+            // dayElem.innerHTML += '<span>Available</span>';
+            for (var i = 0, len = allDatesAvailable.length; i < len; i++) {
+                //  console.log(dateCreated);
+                if (dateCreated == allDatesAvailable[i].Date) {
+                    dayElem.className += ' ' + allDatesAvailable[i].Class;
+                }
+            }
+        }
+    });
+
+    var cat;
+	var eid;
+    jQuery(".activities button.btn-softplay").click(function () {
+        jQuery(".activities").hide();
+        //jQuery('.slot-time > div').hide();
+            if(ss==1 || ss==2){ // mon tue
+                jQuery(".slot-softplay .sb[data-t='16:00']").hide();
+                jQuery(".slot-softplay .sb[data-t='16:30']").hide();
+                jQuery(".slot-softplay .sb[data-t='17:00']").hide();
+            } else if(ss==3) { //wed
+                jQuery(".slot-softplay .sb[data-t='16:00']").hide();
+                jQuery(".slot-softplay .sb[data-t='16:30']").hide();
+            } else if(ss==5) { //fri
+                jQuery(".slot-softplay .sb[data-t='17:00']").hide();
+            }
+			if( sm===8 && sd===22 ){
+				jQuery(".slot-time .sb[data-t='15:30']").hide();
+				jQuery(".slot-time .sb[data-t='16:00']").hide();
+				jQuery(".slot-time .sb[data-t='16:30']").hide();
+			}
+        jQuery(".slot-softplay").show();
+        cat = jQuery(this).data("ct");
+    });
+
+    jQuery(".activities button.btn-openjump").click(function () {
+        jQuery(".activities").hide();
+        //jQuery('.slot-time > div').hide();
+            if(ss==1 || ss==2){ // mon tue
+                jQuery(".slot-openjump .sb[data-t='16:00']").hide();
+                jQuery(".slot-openjump .sb[data-t='16:30']").hide();
+                jQuery(".slot-openjump .sb[data-t='17:00']").hide();
+            } else if(ss==3) { //wed
+                jQuery(".slot-openjump .sb[data-t='15:30']").hide();
+				jQuery(".slot-openjump .sb[data-t='16:00']").hide();
+                jQuery(".slot-openjump .sb[data-t='16:30']").hide();
+            } else if(ss==5) { //fri
+                jQuery(".slot-openjump .sb[data-t='17:00']").hide();
+				jQuery(".slot-openjump .sb[data-t='17:30']").hide();
+            } else if(ss==4) { //thu
+				jQuery(".slot-openjump .sb[data-t='17:30']").hide();
+            }
+			
+			//console.log(ss+"--"+sd+"--"+sm)
+			if( sm===8 && sd===22 ){
+				jQuery(".slot-time .sb[data-t='15:30']").hide();
+				jQuery(".slot-time .sb[data-t='16:00']").hide();
+				jQuery(".slot-time .sb[data-t='16:30']").hide();
+			}
+		
+			if( sm===9 && sd===29 ){
+				jQuery(".slot-openjump .sb[data-t='16:30']").hide();
+				jQuery(".slot-openjump .sb[data-t='17:00']").hide();
+				jQuery(".slot-openjump .sb[data-t='17:30']").hide();
+			}
+		
+        jQuery(".slot-openjump").show();
+        cat = jQuery(this).data("ct");
+    });
+	
+	jQuery("span.aug08").click(function () {
+        jQuery(".activities").hide();
+        //jQuery('.slot-time > div').hide();
+        jQuery(".slot-openjump .sb[data-t='12:00']").hide();
+       
+        jQuery(".slot-openjump").show();
+        cat = jQuery(this).data("ct");
+    });
+
+    jQuery(".activities button.btn-toddler").click(function () {
+        jQuery(".activities").hide();
+        //jQuery('.slot-time > div').hide();
+		console.log("toddler: "+ss);
+		
+        if(ss==6){
+            jQuery(".slot-toddler .sb[data-t='10:00']").hide();
+			jQuery(".slot-toddler .sb[data-t='10:00']").addClass('hidden')
+        } else {
+            jQuery(".slot-toddler .sb[data-t='09:00']").hide();
+			jQuery(".slot-toddler .sb[data-t='10:00']").removeClass('hidden')
+        }
+		//console.log(dte)
+		if(new Date(dte) >= new Date('2024-07-13') && new Date(dte) <= new Date('2024-09-15') ){
+			jQuery(".slot-toddler .sb[data-t='14:00']").hide();
+		}
+		
+        jQuery(".slot-toddler").show();
+        cat = jQuery(this).data("ct");
+    });
+
+    jQuery(".activities button.btn-jfjump").click(function () {
+        jQuery(".activities").hide();
+        //jQuery('.slot-time > div').hide();
+
+        jQuery(".slot-jfjump").show();
+		if(new Date(dte) >= new Date('2024-07-13') && new Date(dte) <= new Date('2024-09-15') ){
+			if(ss==3){
+				jQuery(".slot-jfjump .sb[data-t='10:00']").hide();
+				jQuery(".slot-jfjump .sb[data-t='14:00']").show();
+				jQuery(".slot-jfjump .sb[data-t='16:00']").show();
+			} else if(ss==6){
+				jQuery(".slot-jfjump .sb[data-t='10:00']").show();
+				jQuery(".slot-jfjump .sb[data-t='14:00']").show();
+				jQuery(".slot-jfjump .sb[data-t='16:00']").hide();
+			} else {
+				jQuery(".slot-jfjump .sb[data-t='14:00']").show();
+				jQuery(".slot-jfjump .sb[data-t='16:00']").hide();
+				jQuery(".slot-jfjump .sb[data-t='10:00']").hide();
+			}
+        } else if(ss==6){
+            jQuery(".slot-jfjump .sb[data-t='16:00']").hide();
+		} else {
+			jQuery(".slot-jfjump .sb[data-t='16:00']").show();
+			jQuery(".slot-jfjump .sb[data-t='14:00']").show();
+            jQuery(".slot-jfjump .sb[data-t='10:00']").hide();
+		}
+
+		/*if(ss==6){
+                 jQuery(".slot-jfjump .sb[data-t='16:00']").hide();
+             } else {
+                 jQuery(".slot-jfjump .sb[data-t='10:00']").hide();
+          }*/
+		
+		console.log('day:'+ss);
+		  if(ss==0){
+			 console.log('hidimg 10');
+			  jQuery(".slot-jfjump .sb[data-t='10:00']").hide().addClass('hidden');
+		  } else {
+			  console.log('else');
+			 jQuery(".slot-jfjump .sb[data-t='10:00']").show();
+		  }
+        cat = jQuery(this).data("ct");
+    });
+
+    jQuery(".activities button.btn-ssession ").click(function () {
+        jQuery(".activities").hide();
+        //jQuery('.slot-time > div').hide();
+            if(ss==0){
+                jQuery(".slot-ssession .sb[data-t='16:30']").hide();
+            } else {
+                jQuery(".slot-ssession .sb[data-t='09:00']").hide();
+            }
+        jQuery(".slot-ssession").show();
+        cat = jQuery(this).data("ct");
+    });
+
+    jQuery(".activities button.btn-mbounce").click(function () {
+        jQuery(".activities").hide();
+        //jQuery('.slot-time > div').hide();
+        jQuery(".slot-mbounce").show();
+        cat = jQuery(this).data("ct");
+    });
+
+    jQuery(".activities button.btn-calmer").click(function () {
+        jQuery(".activities").hide();
+        //jQuery('.slot-time > div').hide();
+        jQuery(".slot-calmer").show();
+        cat = jQuery(this).data("ct");
+    });
+	
+	jQuery(".activities button.btn-halloween").click(function () {
+        jQuery(".activities").hide();
+        //jQuery('.slot-time > div').hide();
+        jQuery(".slot-halloween").show();
+        cat = jQuery(this).data("ct");
+    });
+
+    jQuery(".activities button.btn-pyjama").click(function () {
+        jQuery(".activities").hide();
+        //jQuery('.slot-time > div').hide();
+
+        if(ss==5){
+             jQuery(".slot-pyjama .sb[data-t='09:00']").hide();
+        } else {
+                jQuery(".slot-pyjama .sb[data-t='10:00']").hide();
+        }
+        jQuery(".slot-pyjama").show();
+        cat = jQuery(this).data("ct");
+    });
+
+    jQuery(".activities button.btn-sen-christmas").click(function () {
+        jQuery(".activities").hide();
+        //jQuery('.slot-time > div').hide();
+        jQuery(".slot-sen-christmas").show();
+        cat = jQuery(this).data("ct");
+    });
+
+    jQuery(".activities button.btn-megab-christmas").click(function () {
+        jQuery(".activities").hide();
+        //jQuery('.slot-time > div').hide();
+        jQuery(".slot-megab-christmas").show();
+        cat = jQuery(this).data("ct");
+    });
+
+    var zid;
+	var tm;
+    jQuery(".activities button").click(function () {
+        zid = jQuery(this).attr("data-ct");
+		eid = jQuery(this).attr("data-eid");
+        activityTitle = jQuery(this).attr("title");
+        slotsClass = '.slots';
+        switch(activityTitle){
+            case "Open Jump":
+                slotsClass=".slot-openjump";
+            break;
+			case "Junior/Family Jump":
+                slotsClass=".slot-jfjump";
+            break;
+            default:
+                slotsClass=".slots";
+            break;
+        }
+        console.log(slotsClass);
+        jQuery(".activities button").removeClass("selected");
+        jQuery(this).toggleClass("selected");
+		
+		jQuery(".slots").attr("data-date", dte).data("date", dte);
+		//jQuery('.slots').zoneAvailability();
+		//jQuery('.slots').availability();
+        jQuery(slotsClass).availability();
+    });
+
+    jQuery(".sb").click(function () {
+        var dt = jQuery(".flatpickr-input").val();
+        var tm = jQuery(this).data("t");
+
+        zid = jQuery(".selected")
+            .map(function () {
+                return jQuery(this).attr("data-ct");
+            })
+            .get();
+            
+        zid = zid.join("&category_id[]=");
+
+        jQuery(".ev-d").show();
+
+		// https://airboxbounce.co.uk/book-now/
+
+        if( zid == '8557' && eid == 'christmas' ){
+            location.href = "https://bookedit.online/airbox-book-adults/?date=" + dt + "&start_time=" + tm + "&category_id[]="+zid+"&external_event_id=" + eid;
+        } else {
+            location.href = "https://bookedit.online/airbox-book/?date=" + dt + "&start_time=" + tm + "&category_id[]="+zid+"&external_event_id=" + eid;
+        }
+
+    });
+});
+
+</script>
+<style>
+/* Page */
+.row-narrow > .col,
+.row-narrow > [class*="col-"] {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.\31stoct {
+	display: none;
+}
+/* Calendar */
+.flatpickr-calendar.inline,
+.flatpickr-months .flatpickr-month,
+.flatpickr-current-month .flatpickr-monthDropdown-months, 
+.flatpickr-calendar span.flatpickr-weekday {
+    background: transparent !important;
+    box-shadow: none;
+}
+.flatpickr-input[readonly], .flatpickr-cinput[readonly] {
+    cursor: pointer;
+    display: none;
+}
+.flatpickr-calendar .flatpickr-day.no-label {
+    color: #444;
+    background: #fff;
+}
+.flatpickr-calendar .flatpickr-day.today {
+    border-color: #F8972C;
+}
+.flatpickr-calendar.inline {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100% !important;
+}
+.flatpickr-innerContainer {
+    justify-content: center;
+}
+
+.flatpickr-calendar span.flatpickr-weekday {
+    font-size: 100%;
+    color: #031133;
+    text-transform: uppercase;
+}
+.flatpickr-calendar .flatpickr-day {
+    font-weight: 500;
+    text-align: center;
+    border-radius: 0px;
+}
+@media (min-width: 576px) {
+    .flatpickr-calendar .flatpickr-days,
+    .flatpickr-calendar .dayContainer {
+        width: 440px;
+        min-width: 440px;
+    }
+    .flatpickr-calendar .flatpickr-day {
+        max-width: 50px;
+        height: 40px;
+        line-height: 40px;
+        margin: 4px;
+    }
+}
+/*.flatpickr-day.today{
+    border-width: 0;
+}*/
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover {
+    font-weight: 500;
+    color: #fff!important;
+    background-color: #F8972C!important;
+}
+.flatpickr-day.nextMonthDay,
+.flatpickr-day.flatpickr-disabled {
+    cursor: default !important;
+    color: rgba(57,57,57,0.5) !important;
+}
+.flatpickr-day:hover, .flatpickr-day:focus,
+.flatpickr-day.today:hover, .flatpickr-day.today:focus,
+.flatpickr-day.selected:hover, .flatpickr-day.selected:focus,
+.flatpickr-day.flatpickr-disabled:hover {
+    border-color: #F8972C!important;
+    background: #F8972C!important;
+    color: #fff!important;
+}
+.flatpickr-calendar .flatpickr-weekdays {
+    margin: 15px 0;;
+}
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-current-month input.cur-year{
+    text-align: center;
+    font-weight: 500 !important;
+    color: #000 !important;
+	border-width: 0 !important;
+}
+select.flatpickr-monthDropdown-months {
+    -moz-appearance: none !important;
+    -webkit-appearance: none !important;
+    pointer-events: none;
+}
+.slot-time button.sb.hidden{display:none !important}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+/* Firefox */
+input[type="number"] { 
+    -moz-appearance: textfield; }
+</style>
