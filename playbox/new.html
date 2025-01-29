@@ -1,0 +1,127 @@
+<div class="container pht-my-area text-white">
+    <h1 class="h1">Order 2012975</h1>
+    <div class="box mb small-font">
+        Box Park
+    </div>
+    <div class="box mb small-font pb-3">
+        <label>Dates:</label>
+        <span class="selectedDate">Thu 27 Oct</span>
+        <a id="btn-emchangedate" class="b-action change-date btn-theme-style" href="#">Modify Booking</a> &nbsp; (£2 charge per person to change date)
+    </div>
+  
+    <h4 class="h4">Items</h4>
+    <div class="box mb small-font items">
+        <div class="item">
+            <div class="row">
+                <div class="col-md-7">
+                    <strong>Shuffleboard</strong>
+                </div>
+                <div class="col-md-5 text-right qty">×6 </div>
+            </div>
+        </div>
+    </div>
+    <div class="row small-font">
+        <div class="col-md-12 py-3 contact-details">
+            <h4 class="h4">Contact Details</h4>
+            <div class="name">
+                <label for="">Name:</label> Brad Nobbs
+            </div>
+            <div class="phone">
+                <label for="">Phone:</label> 07798676754
+            </div>
+            <div class="email">
+                <label for="">Email: </label>brad@booked.it
+            </div>
+            <div class="postcode">
+                <label for="">Postcode:</label> Nn9 6hl
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="btn-group mb-2">
+            <div><a class="b-action btn-theme-style" href="">Download Ticket (PDF)</a></div>
+            <div><a class="b-action" href="">Request a refund</a></div>
+            <div><a class="b-action" href="">Make another Booking</a></div>
+            <div><a class="b-action" href="">Add a Food & Drink Package</a></div>
+        </div>
+    </div>
+  
+    <div class="total py-3">
+        <div class="row">
+            <h4 class="col-md-6 h5">Total</h4>
+            <h4 class="col-md-6 h5 text-right">£ 11.00</h4>
+        </div>
+        <div class="row">
+            <h4 class="col-md-6 h5">Remaining Amount</h4>
+            <h4 class="col-md-6 h5 text-right">£ 11.00 </h4>
+        </div>
+    </div>
+    <div class="buttons-wrap">
+        <div><a class="b-action payment" href="">Pay remaining balance</a></div>
+  
+        <form action="/additional-payment" method="post" id="pht-booking-form"
+            class="pht-payment-form pht-members-area-payment-form billing">
+            <input type="hidden" id="pht_csrf" name="pht_csrf" value="9b5c3d0d20"><input type="hidden"
+                name="_wp_http_referer" value="/my-account">
+            <div class="price-options">
+                <h3>Additional payments</h3>
+                <p>How would you like to pay?</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="option selected">
+                            <div class="radio-option">
+                                <input type="radio" name="payment[payment_type]" class="regular-radio" value="full"
+                                    checked="">
+                                <label></label>
+                            </div>
+                            <label>PAY FULL BALANCE</label>
+                            <div class="price">
+                                <span class="price-symbol">£ </span>
+                                <span id="price-amount" class="price-amount" data-original="800.00">11.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="option optional-amount">
+                            <div class="radio-option">
+                                <input type="radio" name="payment[payment_type]" class="regular-radio" value="deposit">
+                                <label></label>
+                            </div>
+                            <label>PAY PARTIAL BALANCE</label>
+                            <div class="price form-group">
+                                <span class="symbol price-symbol">£ </span>
+                                <input name="payment[amount]" type="number" class="form-control text-center inactive custom-amount" min="1" max="800" step="1"
+                                    placeholder="Any amount" data-symbol="£">
+                                <div class="help-block"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" name="payment[currency]" value="GBP">
+            </div>
+            <div class="terms form-group">
+                <input type="checkbox" id="terms" name="agreement" required="">
+                <label for="terms">
+                    Please accept <a target="_blank" href="/terms-and-conditions/" rel="nofollow noopener"> Terms and conditions </a>
+                </label>
+                <p class="help-block"></p>
+            </div>
+  
+            <div class="error-messages hidden">
+                <div class="alert alert-warning"></div>
+            </div>
+  
+            <div class="buttons text-center">
+                <div class="text-center">
+                    <button id="book-now-button" class="btn px-4" type="submit"> CONFIRM AND PAY TODAY <span class="price"></span></button>
+                </div>
+            </div>
+        </form>
+        <br>
+        <hr style="border: 1px solid #efefef;">
+        <br>
+        <div class="btn-group">
+            <div><a class="b-action logout" href="">Log out</a></div>
+        </div>
+    </div>
+  </div>

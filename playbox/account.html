@@ -1,0 +1,102 @@
+<?php 
+    get_header();
+    #echo do_shortcode('[elementor-template id="13"]');
+    
+	$template_id = 13; // Replace with your actual template ID
+	echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($template_id);
+?>
+<div class="container pht-my-area py-5">
+	<?php include_once(__DIR__ . '/widget_top.php'); ?>
+	<?php if ($_SESSION['order']->status == 'cancelled') : ?>
+		<div class="alert alert-danger">
+			YOUR BOOKING HAS BEEN CANCELLED
+		</div>
+	<?php endif; ?>
+	<?php include(template_include(__DIR__ . '/order.php'));?>
+	<?php 
+	if (isset($future->data) && $future->data) {
+		$orders = $future->data;
+		$title = 'My Upcoming Tickets';
+		include(template_include(__DIR__ . '/orders.php'));
+	}
+	if (isset($past->data) && $past->data) {
+		$orders = $past->data;
+		$title = 'Previous Bookings';
+		include(template_include(__DIR__ . '/orders.php'));
+	}
+	?>
+	<?php //include_once(__DIR__ . '/upgrades.php'); ?>
+	<?php 
+		if ($_SESSION['order']->status != 'cancelled') {
+			if (isset($options['payment_processor']) && $options['payment_processor'] == 'on-site') {
+				include(template_include(dirname(dirname(__DIR__)) . '/payments/templates/payment/payments.php'));
+			} elseif (isset($options['payment_processor']) && $options['payment_processor'] == 'booked.it') {
+				include(template_include(dirname(dirname(__DIR__)) . '/payments/templates/booked.it/payments.php'));
+			} elseif (isset($options['payment_processor']) && $options['payment_processor'] == 'auto') {
+				if ($order->processor == 'felloh') {
+					include(template_include(dirname(dirname(__DIR__)) . '/payments/templates/payment/payments.php'));
+					include_once(dirname(dirname(__DIR__)) . '/payments/templates/payment/payments.php');
+				} else {
+					include(template_include(dirname(dirname(__DIR__)) . '/payments/templates/booked.it/payments.php'));
+				}
+			}
+		}
+	?>
+	<div class="actions">
+		<?php include(template_include(__DIR__ . '/menu.php'));?>
+
+		<?php if ($_SESSION['order']->status != 'cancelled') : ?>
+			<?php include(template_include(__DIR__ . '/resend.php'));?>
+			<?php include(template_include(__DIR__ . '/send_message.php'));?>
+			<?php include(template_include(__DIR__ . '/tickets_data.php'));?>
+		<?php endif; ?>
+	</div>
+	<?php include(template_include(__DIR__ . '/widget_bottom.php'));?>
+</div>
+<style>
+@import url(<?php echo home_url(); ?>/wp-content/plugins/elementor/assets/css/widget-divider.min.css);
+@import url(<?php echo home_url(); ?>/wp-content/uploads/elementor/css/post-10.css);
+@import url(<?php echo home_url(); ?>/wp-content/uploads/elementor/css/post-1223.css);
+body {
+    font-family: "Deck", Sans-serif;
+    font-weight: normal;
+    background-color: var(--e-global-color-d9a606a) !important;
+    background-color: #E59AAA !important; 
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: ConduitITCStd, Sans-serif;
+    font-weight: normal;
+    margin-top: 0.75rem;
+}
+.bg-theme {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+div.actions.row {
+    margin-right: 0px;
+    margin-left: 0px;
+    gap: 20px;
+}
+div.actions .b-action {
+    width: auto; }
+div.actions .b-action a {
+    font-family: "ConduitITCStd", Sans-serif;
+    font-weight: normal;
+    color: #ffffff;
+    display: block;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    border-width: 0px;
+    background-color: #E00034;
+}
+div.actions .b-action a:hover, div.actions .b-action a:focus {
+    background-color: #343437;
+}
+</style>
+<?php 
+    get_footer();
+    #echo do_shortcode('[elementor-template id="16"]');
+    
+	$template_id = 1223;
+	echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($template_id);
+
+?>
