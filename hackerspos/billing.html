@@ -1,0 +1,48 @@
+<!--<div class="step3">-->
+<!--    <form method="get" id="pht-payments">-->
+<!--        <input type="hidden" name="venue_id" value="13680">-->
+<!--        <input type="hidden" name="start" id="start" value="2024-01-09">-->
+<!--        <input type="hidden" name="days" value="1">-->
+<!--        <input type="hidden" name="currency" id="currency" value="GBP">-->
+<!--        <input type="hidden" name="event_id" value="">-->
+<!--       <div></div>-->
+<!--    </form>-->
+<!--</div>-->
+
+<form method="POST" action="/pht-load-billing-dojo" data-trigger="dojo" data-target="#dojo-billing" id="dojo-selection">
+
+    [pht-csrf]
+    
+    <input type="hidden" placeholder="staff" name="staff" class="nfm-staff" value="">
+    <input type="hidden" placeholder="days" name="days" value="1">
+    <input type="hidden" placeholder="venue_id" name="venue_id" value="15473">
+    <input type="hidden" placeholder="date" name="start" id="start" value="2024-06-30">
+    <!--<input type="hidden" placeholder="event_id" name="event_id" value="-1">-->
+	[pht-first-event venue_id="15473"]
+    <input type="hidden" id="up_start_time" name="start_time" value=""> 
+    <input type="hidden" placeholder="currency" name="currency" value="GBP">
+    <input type="hidden" class="up_people" placeholder="people" name="people" value="1">           
+    <!--<span class="text-whitee">Products & Quantity</span>-->
+    <div class="nfm-products">
+       <!--[dyanamic_category]-->
+    </div>
+    <input type="hidden" class="nfm-title" placeholder="title" name="guest[title][]" value="">
+    <input type="hidden" class="nfm-fname" placeholder="first name" name="guest[first_name][]" value="">
+    <input type="hidden" class="nfm-lname" placeholder="last name" name="guest[last_name][]" value="">
+    <input type="hidden" class="nfm-email" placeholder="email" name="guest[email][]" value="">
+    <input type="hidden" class="nfm-phone" placeholder="phone" name="guest[phone][]" value="">
+    
+    <input type="hidden" class=""  name="guest[address_first][]" value="">
+    <input type="hidden" class="" name="guest[address_second][]" value="">
+    <input type="hidden" class="" name="guest[town][]" value="">
+    <input type="hidden" class="" name="guest[county][]" value="">
+    <input type="hidden" class="" name="guest[postcode][]" value="">
+   
+    <input type="hidden" class="" name="guest[country][]" value="">
+    
+    <input type="hidden" placeholder="giftaid 0 or 1" name="special_notes" value="">
+    <button type="submit" class="nfm-submit hide">Submit</button>
+
+</form>
+
+<div id="dojo-billing"></div>

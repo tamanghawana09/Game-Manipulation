@@ -1,0 +1,330 @@
+html, html[lang="en"] {
+    margin-top: 0px !important;
+}
+/* All Steps */
+selector {
+    --theme-color: #00af3f;
+    --border-color: #d4dee5;
+}
+
+#wpadminbar,
+body #admin_logout,
+body.logged-in #admin_login{
+    display: none;
+}
+
+body.logged-in #admin_logout{
+    display: block;
+}
+.qty .qty-input {
+    pointer-events: none;
+}
+
+#staff_login {
+    opacity: 0.5;
+    pointer-events: none;
+}
+body.logged-in #staff_login {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.btn-enter {
+    background: #fff;
+    color: #0a0050 !important;
+    padding: 10px !important;
+}
+
+.btn-enter,
+selector .elementor-button {
+    position: relative;
+    cursor: pointer;
+    padding: 15px 40px;
+    transition: all .5s ease, color .2s ease;
+    -webkit-clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+}
+
+body:not(.elementor-editor-active) #buy_ticket,
+body:not(.elementor-editor-active) #cash-submission,
+body:not(.elementor-editor-active) section#uk_giftaid,
+body:not(.elementor-editor-active) section[id*="step"]:not(#step_ukgift),
+#addtocartInfo, #filled-cart, #customer_details,
+#cookie-law-info-bar, #cookie-law-info-again, #cliSettingsPopup,
+.woocommerce-message, .woocommerce-form-coupon-toggle, .woocommerce-checkout-payment .payment_method_stripe,
+.no-uk-customer-cfrom, .spinner-btn, .spinner-chkout-btn,
+.pin-wrapper, .start-form, 
+.open-register,
+.close-register,
+.open-register-form,
+.close-register-form,
+.close-signage,
+form.woocommerce-checkout {
+    display: none;
+}
+#checkoutInfo {
+    display: none;}
+
+label[for=payment_method_stripe_terminal] img {
+    width: 50px; }
+
+.btn-dojo, .btn-cash, .btn-edit{
+    color: #fff;
+    background: #2397E9;
+}
+.btn-dojo:hover, .btn-cash:hover{
+    color: #fff;
+}
+
+.btn-yes, .btn-no {
+    border: 4px solid #fff !important;
+}
+.btn-yes.selected, .btn-no.selected {
+    border-color: #0e8ce2 !important;
+}
+
+/* Style */
+selector .elementor-widget-icon.elementor-view-default .elementor-icon svg {
+    fill: none;
+}
+selector .btn-block {
+    width: 100%;
+}
+selector .btn-dark {
+    color: #ffffff;
+    border-color: #00af3f;
+    background-color: #00af3f;
+}
+.btn.btn-outline-primary:hover {
+    color: #007bff;
+    border-color: #007bff;
+    background-color: transparent;
+}
+.btn.btn-outline-light:hover {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+    background-color: transparent;
+}
+.border {
+    border-color: var(--border-color);
+}
+.elementor-button, .up_activity {
+    cursor: pointer;
+}
+/* Form */
+.form-control::placeholder {
+    color: #999;
+}
+.title {
+    text-align: center; 
+    color: #fff;
+}
+input.form-control,
+textarea.form-control,
+input.wpcf7-form-control:not(.wpcf7-submit),
+textarea.wpcf7-form-control,
+select.wpcf7-select {
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 0px;
+    height: auto;
+    border-color: var(--border-color);
+    background-color: #fff;
+    border-radius: 0.25rem;
+}
+input.form-control:focus,
+textarea.form-control:focus,
+input.wpcf7-form-control:focus,
+textarea.wpcf7-form-control:focus,
+select.wpcf7-select:focus {
+    border-color: var(--border-color);
+    box-shadow: none;
+}
+.wpcf7-submit {
+    border-color: #00af3f;
+    background-color: #00af3f;
+}
+
+select#uname {
+    height: 45px;
+}
+
+.ct-time-slide a, 
+select#uname, 
+select#uname:focus-visible, 
+.form-control, 
+.form-control:focus-visible {
+    color: #fff !important;
+    background-color: #0a0050 !important;
+    box-sizing: border-box;
+    --grad: transparent 49.5%, #13c6de 50%;
+    background: linear-gradient(to top left, var(--grad)) top left, linear-gradient(to bottom right, var(--grad)) bottom right, #0a0050;
+    background-size: 17px 17px;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    border: 2px solid #13c6de !important;
+    -webkit-clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+    outline: none;
+}
+
+.ct-time-slide a {
+    border: none !important;
+    background: var( --e-global-color-556083d ) !important;
+}
+
+/* Quantity */
+.input-number-group input[type="number"]::-webkit-inner-spin-button,
+.input-number-group input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+.input-number-group .input-number {
+    width: 50px;
+    padding: 0 12px;
+    text-align: center;
+    outline: none;
+    display: block;
+    margin: 0;
+    border: none;
+    border-radius: 10px !important;
+    pointer-events: none;
+}
+.input-number-group .input-number,
+.input-number-group .input-number-decrement,
+.input-number-group .input-number-increment {
+    height: 28px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 0;
+}
+.input-number-group .input-number-decrement,
+.input-number-group .input-number-increment {
+    display: inline-block;
+    width: 28px;
+    line-height: 25px;
+    color: var(--theme-color);
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid var(--theme-color);
+    border-radius: 10px;
+}
+#cash-submit{
+    background-color: #47d1a4;
+    border-color: #47d1a4 !important;
+}
+
+button#place_order {
+    padding: 15px 30px;
+    font-weight: 200;
+}
+
+#step-pos-terminal .woocommerce {
+    padding: 0 15px;
+}
+
+.checkout-listins .border {
+    border-color: #dddddd !important;
+    margin-bottom: 10px !important;
+    padding: 10px;
+}
+
+.woocommerce-checkout-review-order-table td, 
+.woocommerce-checkout-review-order-table th {
+  border: none;
+}
+.woocommerce-checkout #payment {
+    background: #f6f6f6;
+}
+
+.sp-pp-mb {
+    display: none;
+}
+@media screen and (max-width: 600px){
+    .sp-pp {
+        display: none;
+    }
+    .sp-pp-mb {
+        display: block;
+    }
+    .remove-selected button {
+        background: #d3d3d3;
+        border-radius: 50%;
+        padding: 0px 7px;
+    }
+    .input-number-group .input-number {
+        width: 30px;
+        padding: 0 0px;
+    }
+    .sp-qty {
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+}
+
+h1#dojo-cart {
+    font-size: 24px;
+}
+.discount-box {
+    padding: 20px 20px;
+}
+.btn.btn-apply-coupon {
+    font-size: 14px;
+    line-height: 20px;
+}
+.transaction {
+    font-size: 18px;
+    margin: 10px 5px;
+}
+.transaction label {
+        margin-bottom: 0;
+}
+
+.dojo .terminals {
+    margin-bottom: 10px;
+}
+.dojo .terminal {
+    width: 33.333%;
+    float: left;
+    padding: 5px;
+}
+.dojo .terminal .name {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+#dojo-billing .success h3 {
+    background-color: #639962;
+    font-size: 18px;
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1293px){
+    .skip-form {
+        display: none;
+    }
+    .product.pht-event .col-md-5{
+        padding: 0;
+    }
+    .product.pht-event .qty.text-right {
+        padding-left: 0;
+    }
+    .qty .qty-input {
+        line-height: 20px;
+        width: 35px;
+        padding: 5px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .qty button, .qty button:hover {
+        border-radius: 5px;
+        border: solid 2px #ccc;
+        width: 34px;
+    }
+    .dojo .terminal .status {
+        float: left;
+        margin-bottom: 5px;
+    }
+}
