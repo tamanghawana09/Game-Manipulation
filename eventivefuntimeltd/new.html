@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<!-- Load Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+<script>
+    jQuery(document).on("elementor/popup/show",() => {
+        jQuery(".flatpickr-inline").flatpickr({
+            altInput: true,
+            altFormat: "j F Y",
+            dateFormat: "Y-m-d",
+            inline: true,
+            position: "auto center",
+            minDate: "2025-04-04",
+            maxDate: "2025-04-21",
+        });
+    })
+</script>
