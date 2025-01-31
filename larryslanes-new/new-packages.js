@@ -434,7 +434,7 @@ document.querySelectorAll('[id^="available-step-"]').forEach(button => {
 						let title = checkbox.getAttribute('data-title').toLowerCase().replace(/\s+/g, '-');
 
 
-
+                    
 						console.log(title)
 
 
@@ -500,7 +500,7 @@ document.querySelectorAll('[id^="available-step-"]').forEach(button => {
                     }
 
 
-
+                   
 					console.log(`Date: ${dte}, No. of People: ${maxpeople}`);
 
 
@@ -814,6 +814,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     const specificDates = ['2024-12-24', '2024-12-26', '2024-12-31', '2025-01-01'];
+  
 
     // Get the select element
 
@@ -832,6 +833,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get the selected value
 
         const selectedValue = bowlingSelect.value;
+        
+        const adultInput = document.querySelector('.input-number.ad');
+        const kidInput = document.querySelector('.input-number.kd');
+        const inputDate = dte;
 
         const btnTime = document.querySelectorAll('.bowling-time .btn-time');
 
@@ -960,7 +965,118 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
         }
+                
+       
+                if (selectedValue === '1' && adultInput) {
 
+                    btnTime.forEach(btn =>{
+
+                        const inputDate = document.getElementById('inputDate').value;
+
+                        console.log('Original inputDate:', inputDate); // Logs: '2025-02-24'
+                
+                        // Check if the input date is in 'YYYY-MM-DD' format
+                        if (inputDate.includes('-')) {
+
+                            console.log('Date already in correct format');
+
+                            const formattedDate = inputDate; 
+
+                            const peakDates = [
+                                '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                                '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                                '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                                '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                                '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                                '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                            ];
+                            
+                            if(peakDates.includes(formattedDate)){
+                                btn.setAttribute('pid', '118687037'); // Adult ID set to 118687037 for peak dates
+                                btn.setAttribute('cid', '118687182');
+                            }
+
+                        } else {
+                                const [day, month, year] = inputDate.split('/');
+
+                                const formattedDate = `${year}-${month}-${day}`;
+
+                                const peakDates = [
+                                    '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                                    '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                                    '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                                    '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                                    '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                                    '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                                ];
+                                
+                                if(peakDates.includes(formattedDate)){
+                                    btn.setAttribute('pid', '118687037'); // Adult ID set to 118687037 for peak dates
+                                    btn.setAttribute('cid', '118687182');
+                                }
+                        }
+                    });
+                    
+                }
+
+
+                if (selectedValue === '2' && adultInput) {
+
+                    btnTime.forEach(btn =>{
+
+                        const inputDate = document.getElementById('inputDate').value;
+
+                        console.log('Original inputDate:', inputDate); // Logs: '2025-02-24'
+                
+                        // Check if the input date is in 'YYYY-MM-DD' format
+                        if (inputDate.includes('-')) {
+
+                            console.log('Date already in correct format');
+
+                            const formattedDate = inputDate; 
+
+                                    
+                                const peakDates = [
+                                    '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                                    '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                                    '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                                    '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                                    '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                                    '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                                ];
+                                
+                                if(peakDates.includes(formattedDate)){
+                                    btn.setAttribute('pid', '118688024'); // Adult ID set to 118687037 for peak dates
+                                    btn.setAttribute('cid', '118688026');
+                                }
+
+                        } else {
+                                const [day, month, year] = inputDate.split('/');
+
+                                const formattedDate = `${year}-${month}-${day}`;
+
+
+                                const peakDates = [
+                                    '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                                    '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                                    '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                                    '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                                    '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                                    '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                                ];
+                                
+                                if(peakDates.includes(formattedDate)){
+                                    btn.setAttribute('pid', '118688024'); // Adult ID set to 118687037 for peak dates
+                                    btn.setAttribute('cid', '118688026');
+                                }
+
+                        }
+                    });
+                    
+                }
+                
+            });
+        
 
 
         document.querySelector(".bowling-time .owl-carousel").setAttribute("data-needed", Math.ceil(maxpeople / 7) );
@@ -1105,7 +1221,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Family Eight 
 
-            // Update the pid attribute based on the selected value 
+            // Update the pid attribute based on the selected value  
 
             if (selectedValue === '1') {
 
@@ -1183,6 +1299,182 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+        }
+
+        if(dealType =='family-four'){
+            if (selectedValue === '1') {
+
+                btnTime.forEach(btn =>{
+
+                    const inputDate = document.getElementById('inputDate').value;
+
+                    console.log('Original inputDate:', inputDate); // Logs: '2025-02-24'
+            
+                    // Check if the input date is in 'YYYY-MM-DD' format
+                    if (inputDate.includes('-')) {
+
+                        console.log('Date already in correct format');
+
+                        const formattedDate = inputDate; 
+
+                        const peakDates = [
+                            '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                            '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                            '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                            '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                            '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                            '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                        ];
+                        
+                        if(peakDates.includes(formattedDate)){
+                            btn.setAttribute('pid','35754926');
+                        }
+
+                    } else {
+                            const [day, month, year] = inputDate.split('/');
+
+                            const formattedDate = `${year}-${month}-${day}`;
+
+
+                            const peakDates = [
+                                '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                                '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                                '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                                '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                                '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                                '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                            ];
+                            
+                            if(peakDates.includes(formattedDate)){
+                                btn.setAttribute('pid','35754926');
+                            }
+
+                    }
+                });
+                
+            }
+        }
+
+        if(dealType =='family-four'){
+            if (selectedValue === '2') {
+
+                btnTime.forEach(btn =>{
+
+                    const inputDate = document.getElementById('inputDate').value;
+            
+                    // Check if the input date is in 'YYYY-MM-DD' format
+                    if (inputDate.includes('-')) {
+
+
+                        const formattedDate = inputDate; 
+
+                                
+                                const peakDates = [
+                                    '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                                    '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                                    '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                                    '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                                    '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                                    '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                                ];
+                                
+                                if(peakDates.includes(formattedDate)){
+                                    btn.setAttribute('pid','54599082');
+                                }
+                    
+
+                    } else {
+                            const [day, month, year] = inputDate.split('/');
+
+                            const formattedDate = `${year}-${month}-${day}`;
+
+                           
+                     
+                            const peakDates = [
+                                '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                                '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                                '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                                '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                                '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                                '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                            ];
+                            
+                            if(peakDates.includes(formattedDate)){
+                                btn.setAttribute('pid','54599082');
+                            }
+
+                    }
+                });
+                
+            }
+        }
+
+        if(dealType =='family-eight'){
+            if(selectedValue === '1'){
+                btnTime.forEach(btn =>{
+
+                    const inputDate = document.getElementById('inputDate').value;
+                    if (inputDate.includes('-')) {
+                        const formattedDate = inputDate;
+    
+                        const peakDates = [
+                            '2025-08-01', '2025-08-02', '2025-08-03', '2025-08-04', '2025-08-05',
+                            '2025-08-06', '2025-08-07', '2025-08-08', '2025-08-09', '2025-08-10',
+                            '2025-08-11', '2025-08-12', '2025-08-13', '2025-08-14', '2025-08-15',
+                            '2025-08-16', '2025-08-17', '2025-08-18', '2025-08-19', '2025-08-20',
+                            '2025-08-21', '2025-08-22', '2025-08-23', '2025-08-24', '2025-08-25',
+                            '2025-08-26', '2025-08-27', '2025-08-28', '2025-08-29',
+                            '2025-10-27', '2025-10-28', '2025-10-29', '2025-10-30', '2025-10-31',
+                            '2025-12-22', '2025-12-23', '2025-12-24', '2025-12-25', '2025-12-26',
+                            '2025-12-27', '2025-12-28', '2025-12-29', '2025-12-30', '2025-12-31',
+                            '2026-01-01', '2026-01-02'
+                        ];
+                        
+                        // Check if the date matches
+                        if (peakDates.includes(formattedDate)) {
+                            console.log("Peak date matched");
+                            btn.setAttribute('pid', '90523706');
+                        } else {
+                            console.log("No match for the provided date.");
+                        }
+                    }
+                });
+                
+            }
+
+            if(selectedValue === '2'){
+
+                btnTime.forEach(btn =>{
+                    const inputDate = document.getElementById('inputDate').value;
+                    if (inputDate.includes('-')) {
+                        const formattedDate = inputDate;
+
+                        const peakDates = [
+                            '2025-08-01', '2025-08-02', '2025-08-03', '2025-08-04', '2025-08-05',
+                            '2025-08-06', '2025-08-07', '2025-08-08', '2025-08-09', '2025-08-10',
+                            '2025-08-11', '2025-08-12', '2025-08-13', '2025-08-14', '2025-08-15',
+                            '2025-08-16', '2025-08-17', '2025-08-18', '2025-08-19', '2025-08-20',
+                            '2025-08-21', '2025-08-22', '2025-08-23', '2025-08-24', '2025-08-25',
+                            '2025-08-26', '2025-08-27', '2025-08-28', '2025-08-29',
+                            '2025-10-27', '2025-10-28', '2025-10-29', '2025-10-30', '2025-10-31',
+                            '2025-12-22', '2025-12-23', '2025-12-24', '2025-12-25', '2025-12-26',
+                            '2025-12-27', '2025-12-28', '2025-12-29', '2025-12-30', '2025-12-31',
+                            '2026-01-01', '2026-01-02'
+                        ];
+
+
+
+                        // Check if the date matches
+                        if (peakDates.includes(formattedDate)) {
+                            console.log("Peak date matched");
+                            btn.setAttribute('pid', '90522976');
+                        } else {
+                            console.log("No match for the provided date.");
+                        }
+                    }
+                });
+                
+            }
         }
 
 
@@ -1318,6 +1610,110 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
 
+        if (selectedValue === '1') {
+
+            btnTime.forEach(btn =>{
+
+                const inputDate = document.getElementById('inputDate').value;
+
+                console.log('Original inputDate:', inputDate); // Logs: '2025-02-24'
+        
+                // Check if the input date is in 'YYYY-MM-DD' format
+                if (inputDate.includes('-')) {
+
+                    console.log('Date already in correct format');
+
+                    const formattedDate = inputDate; 
+
+                    const peakDates = [
+                        '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                        '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                        '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                        '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                        '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                        '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                    ];
+                    
+                    if(peakDates.includes(formattedDate)){
+                        btn.setAttribute('pid', '118688034'); // Adult ID set to 118687037 for peak dates
+                    }
+
+
+                } else {
+                        const [day, month, year] = inputDate.split('/');
+
+                        const formattedDate = `${year}-${month}-${day}`;
+
+                        const peakDates = [
+                            '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                            '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                            '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                            '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                            '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                            '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                        ];
+                        
+                        if(peakDates.includes(formattedDate)){
+                            btn.setAttribute('pid', '118688034'); // Adult ID set to 118687037 for peak dates
+                        }
+
+                }
+            });
+            
+        }
+
+        if (selectedValue === '2') {
+
+            btnTime.forEach(btn =>{
+
+                const inputDate = document.getElementById('inputDate').value;
+
+                console.log('Original inputDate:', inputDate); // Logs: '2025-02-24'
+        
+                // Check if the input date is in 'YYYY-MM-DD' format
+                if (inputDate.includes('-')) {
+
+                    console.log('Date already in correct format');
+
+                    const formattedDate = inputDate; 
+
+                    const peakDates = [
+                        '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                        '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                        '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                        '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                        '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                        '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                    ];
+                    
+                    if(peakDates.includes(formattedDate)){
+                        btn.setAttribute('pid', '118688037'); // Adult ID set to 118687037 for peak dates
+                    }
+
+
+                } else {
+                        const [day, month, year] = inputDate.split('/');
+
+                        const formattedDate = `${year}-${month}-${day}`;
+
+                        const peakDates = [
+                            '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                            '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                            '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                            '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                            '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                            '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                        ];
+                        
+                        if(peakDates.includes(formattedDate)){
+                            btn.setAttribute('pid', '118688037'); // Adult ID set to 118687037 for peak dates
+                        }
+                }
+            });
+            
+        }
+
+
 
         document.querySelector(".darts-time .owl-carousel").setAttribute("data-needed", Math.ceil(maxpeople / 6) );
 
@@ -1412,6 +1808,112 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+        }
+
+        if (selectedValue === '1') {
+
+            btnTime.forEach(btn =>{
+
+                const inputDate = document.getElementById('inputDate').value;
+
+                console.log('Original inputDate:', inputDate); // Logs: '2025-02-24'
+        
+                // Check if the input date is in 'YYYY-MM-DD' format
+                if (inputDate.includes('-')) {
+
+                    console.log('Date already in correct format');
+
+                    const formattedDate = inputDate; 
+
+                    const peakDates = [
+                        '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                        '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                        '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                        '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                        '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                        '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                    ];
+                    
+                    if(peakDates.includes(formattedDate)){
+                        btn.setAttribute('pid', '122151080'); 
+                    }
+
+
+                } else {
+                        const [day, month, year] = inputDate.split('/');
+
+                        const formattedDate = `${year}-${month}-${day}`;
+
+                        const peakDates = [
+                            '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                            '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                            '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                            '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                            '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                            '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                        ];
+                        
+                        if(peakDates.includes(formattedDate)){
+                            btn.setAttribute('pid', '122151080'); 
+                        }
+
+                }
+            });
+            
+        }
+
+        if (selectedValue === '2') {
+
+            btnTime.forEach(btn =>{
+
+                const inputDate = document.getElementById('inputDate').value;
+
+                
+        
+                // Check if the input date is in 'YYYY-MM-DD' format
+                if (inputDate.includes('-')) {
+
+                    console.log('Date already in correct format');
+
+                    const formattedDate = inputDate; 
+
+                    const peakDates = [
+                        '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                        '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                        '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                        '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                        '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                        '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                    ];
+                    
+                    if(peakDates.includes(formattedDate)){
+                        btn.setAttribute('pid', '122152923'); 
+                    }
+
+                } else {
+                        const [day, month, year] = inputDate.split('/');
+
+                        const formattedDate = `${year}-${month}-${day}`;
+
+                        
+                            const peakDates = [
+                                '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                                '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                                '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                                '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                                '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                                '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                            ];
+                                
+                            if(peakDates.includes(formattedDate)){
+                                btn.setAttribute('pid', '122152923'); 
+                            }
+                
+                        
+
+                }
+            });
+            
         }
 
 
@@ -1539,6 +2041,117 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+        if (selectedValue === '1') {
+
+            btnTime.forEach(btn =>{
+
+                const inputDate = document.getElementById('inputDate').value;
+
+                console.log('Original inputDate:', inputDate); // Logs: '2025-02-24'
+        
+                // Check if the input date is in 'YYYY-MM-DD' format
+                if (inputDate.includes('-')) {
+
+                    console.log('Date already in correct format');
+
+                    const formattedDate = inputDate; 
+
+                    const peakDates = [
+                        '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                        '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                        '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                        '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                        '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                        '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                    ];
+                        
+                    if(peakDates.includes(formattedDate)){
+                        btn.setAttribute('pid', '118688030'); 
+                    }
+
+                    
+                            
+
+                } else {
+                        const [day, month, year] = inputDate.split('/');
+
+                        const formattedDate = `${year}-${month}-${day}`;
+
+                        const peakDates = [
+                            '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                            '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                            '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                            '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                            '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                            '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                        ];
+                            
+                        if(peakDates.includes(formattedDate)){
+                            btn.setAttribute('pid', '118688030'); 
+                        }
+
+                }
+            });
+            
+        }
+
+
+        if (selectedValue === '2') {
+
+            btnTime.forEach(btn =>{
+
+                const inputDate = document.getElementById('inputDate').value;
+
+                console.log('Original inputDate:', inputDate); // Logs: '2025-02-24'
+        
+                // Check if the input date is in 'YYYY-MM-DD' format
+                if (inputDate.includes('-')) {
+
+                    console.log('Date already in correct format');
+
+                    const formattedDate = inputDate; 
+
+                    const peakDates = [
+                        '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                        '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                        '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                        '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                        '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                        '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                    ];
+                        
+                    if(peakDates.includes(formattedDate)){
+                        btn.setAttribute('pid', '118688032'); 
+                    }
+
+                    
+                            
+
+                } else {
+                        const [day, month, year] = inputDate.split('/');
+
+                        const formattedDate = `${year}-${month}-${day}`;
+
+                        const peakDates = [
+                            '2025-02-24', '2025-02-25', '2025-02-26', '2025-02-27', '2025-02-28',
+                            '2025-04-14', '2025-04-15', '2025-04-16', '2025-04-17', '2025-04-18',
+                            '2025-04-21', '2025-04-22', '2025-04-23', '2025-04-24', '2025-04-25',
+                            '2025-05-05', '2025-05-26', '2025-05-27', '2025-05-28', '2025-05-29', '2025-05-30',
+                            '2025-07-22', '2025-07-23', '2025-07-24', '2025-07-25', '2025-07-26',
+                            '2025-07-27', '2025-07-28', '2025-07-29', '2025-07-30', '2025-07-31'
+                        ];
+                            
+                        if(peakDates.includes(formattedDate)){
+                            btn.setAttribute('pid', '118688032'); 
+                        }
+
+                }
+            });
+            
+        }
+
+
+
         document.querySelector(".shuffleboard-time .owl-carousel").setAttribute("data-needed", Math.ceil(maxpeople / 8) );
 
 
@@ -1569,6 +2182,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    
 });
 
 
@@ -1649,7 +2266,7 @@ document.querySelectorAll('.btn-time').forEach(function(button) {
 
 document.getElementById('available-step-4').addEventListener('click', function(e) {
 
-
+    
 
     e.preventDefault(); // Prevent the default anchor behavior
 
@@ -1762,6 +2379,7 @@ document.getElementById('available-step-4').addEventListener('click', function(e
 
 
     document.querySelectorAll('.btn-time.selected').forEach(function(selectedItem) {
+       
 
         const category = selectedItem.getAttribute('category');
 
@@ -1786,6 +2404,7 @@ document.getElementById('available-step-4').addEventListener('click', function(e
 		// Check for specific dates
 
         const specificDates = ['2025-01-01', '2025-04-18', '2025-04-21', '2025-05-05', '2025-05-26', '2025-08-25', '2025-12-25', '2025-12-26'];
+        
 
 
 
@@ -1902,8 +2521,8 @@ document.getElementById('available-step-4').addEventListener('click', function(e
 
 
 
-    });
 
+    });
 
 
     //url += `date=${date}&${selectedProducts}&${zoneTimes}`;
@@ -1915,8 +2534,6 @@ document.getElementById('available-step-4').addEventListener('click', function(e
     // Redirect to the constructed URL
 
     window.location.href = url+'&people=' + totalPpl +'&external_event_id=Larry';
-
-
 
 });
 
