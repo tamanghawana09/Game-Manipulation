@@ -1,0 +1,77 @@
+<div class="row row-narrow justify-content-between search-area">
+    
+    <div class="dropdown col-md-4">
+        <button class="dropdown-toggle btn-block text-left" type="button" id="dp2_loc" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="true" data-venue_id="15448">
+            <svg class="svg-wrap mr-2" width="20px" height="24px">
+              <use class="svg-icon" href="https://bookedit.online/wp-content/uploads/2023/07/locationPin.svg#Page-1" />
+            </svg>
+            <span class="val">Matlock Bath</span>
+                <!--<span class="caret"></span>-->
+            <svg class="svg-wrap ml-2 float-right" width="24px" height="20px">
+                <use class="svg-icon" href="https://bookedit.online/wp-content/uploads/2024/02/bonkersarrowDown.svg#Page-1" />
+            </svg>
+        </button>
+        <div class="dropdown-menu dropdown-menu-center" aria-labelledby="dp2_loc">
+            <a class="dropdown-item active" href="#" data-venue_id="15448">
+              <svg class="svg-wrap mr-2" width="20px" height="24px">
+                <use class="svg-icon" href="https://bookedit.online/wp-content/uploads/2023/07/locationPin.svg#Page-1" />
+              </svg> Matlock Bath</a>
+        </div>
+    </div>
+    
+    <div class="col-md-4 ">
+      <div class="input-group flex-nowrap">
+          <svg class="position-absolute svg-wrap mr-2" width="20px" height="21px">
+          <use class="svg-icon" href="https://bookedit.online/wp-content/uploads/2023/07/calendar.svg#Page-1" />
+        </svg>
+          <div class="flatpickr-date w-100">
+              <input type="text" class="form-control booking-date flatpickr flatpickr-input pl-5" placeholder="Date" />
+              <svg class="position-absolute svg-wrap ml-2" width="24px" height="20px" style="left: auto; right: 15px">
+                <use class="svg-icon" href="https://bookedit.online/wp-content/uploads/2024/02/bonkersarrowDown.svg#Page-1" />
+              </svg>
+          </div>
+          
+      </div>
+    </div>
+  
+    <div class="dropdown dropdown-pp col-md-4">
+        <button class="dropdown-toggle people-toggle btn-block text-left" type="button" id="dp2_people" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="true">
+            <svg class="svg-wrap mr-2" width="22px" height="22px">
+              <use class="svg-icon" href="https://bookedit.online/wp-content/uploads/2023/07/people.svg#Page-1" />
+            </svg>
+            <span class="val">No. of People</span>
+            <!--<span class="caret"></span>-->
+            <svg class="svg-wrap ml-2 float-right" width="24px" height="20px">
+              <use class="svg-icon" href="https://bookedit.online/wp-content/uploads/2024/02/bonkersarrowDown.svg#Page-1" />
+            </svg>
+        </button>
+  
+        <div class="dropdown-menu dropdown-menu-center dp2_people" aria-labelledby="dp2_people">
+            <div class="dropdown-item d-flex no-gutters border-bottom bg-white">
+                <div class="col-6"> Number of People</div>
+                <div class="input-group input-number-group">
+                  <div class="input-group-button">
+                    <span class="input-number-decrement">-</span>
+                  </div>
+                  <input class="input-number ad" type="number" value="0" min="0" max="1000" name="adult">
+                  <div class="input-group-button">
+                    <span class="input-number-increment">+</span>
+                  </div>
+                </div>
+            </div>
+            
+            <div class="dropdown-item d-flexx no-gutters" style="display: none">
+                <div  class="col-7"> Group Booking <small class="d-block">13 people or more</small> </div>
+                <div  class="col-5"><button class="dp_btn btn btn-sm">Enquire</button></div>
+            </div>
+            
+            <div class="dropdown-item text-center" style="margin-top:10px">
+                <button class="btn btn-sm btn-block">Confirm</button>
+            </div>
+        </div>
+    </div>
+  
+  </div>
+  <div class="alert search-alert alert-danger text-center" style="display: none">Please enter all details.</div>
